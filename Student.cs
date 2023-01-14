@@ -21,7 +21,7 @@ namespace LAB3
 
         public Student(string name,int birth, string id, string height, int grade, string major)
         {
-            //(string name, string id, int birth, string height, string grade, string major)
+            
             this.name = name;
             this.birth = birth;
             this.id = id;
@@ -54,21 +54,7 @@ namespace LAB3
         {
             get { return this.major; }
         }
-        public string Demo
-        {
-            get { return this.major; }
-        }
-        public int myAge()
-        {
-            int fAge = 2023 - 4;
-            return fAge;
-        }
-
-        //public List<int> returnList()
         
-            //List<int> GP = new List<int>();
-            //GP.Add(1);
-            //return GP;
         
     }
 }

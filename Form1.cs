@@ -1,4 +1,6 @@
 using System;
+using System.Drawing;
+using System.Xml.Linq;
 
 namespace LAB3
 {
@@ -65,17 +67,6 @@ namespace LAB3
 
             Student newStudent = new Student(name,iYear,id,height,G,major);
             this.list.Add(newStudent);
-
-            int L = 0 + G;
-
-            
-            
-
-           //// if (n != 0)
-          //  { list.Add(newStudent);
-       // } while (n != 0);
-            //this.AVG.Text=string.Format("Max {0}",list.Max().ToString());
-            //this.AVG.Text = string.Format(L.ToString());
             
 
 
@@ -138,21 +129,12 @@ namespace LAB3
             Min.Text = cmin.Min().ToString();
 
             //test
-            int st= 0;
-            if
+            int nr = dataGridView1.Rows.Count;
 
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Name.Text = "";
-            this.Birth.Text = "";
-            this.ID.Text = "";
-            this.Height.Text = "";
-           this.Grade.Text = "";
-            this.Major.Text = "";
-        }
+            ST.Text = nr.ToString();
 
         
+
+        }
     }
 }
