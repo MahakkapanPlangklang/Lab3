@@ -15,31 +15,7 @@ namespace LAB3
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
-           //Student M  = new Student("Titan",2003);
-            //Student M2 = new Student("Te",2003);
-            //Student M3 = new Student("Tes",2003);
-            //M.name= "Titan";
-            //M.id = "1";
-            //M._age = 2;
-            //M.birth = 2003;
-            // M2.name = "Te";
-            // M2.id = "2";
-            // M2._age = 3;
-            // M3.name = "Tes";
-            // M3.id = "3";
-            //M3._age = 4;
-            
-
-            //int MA = 2023 - M.birth;
-            //Name.Text = st[0];
-           // Birth.Text = M.birth.ToString();
-            //Age.Text = MA.ToString();
-            //AVG.Text = myAge().ToString();
-
-            //Name.Text = M.id;
-
-
+        
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -81,15 +57,10 @@ namespace LAB3
             this.Grade.Text = "";
             this.Major.Text = "";
 
-            //BindingList<Student> blist= new BindingList<Student>(this.list);
-            //BindingSource bs = new BindingSource(blist,null);
-            //this.dataGridView1= new DataGridView();
+            //Max
             Max.Text = (from DataGridViewRow row in dataGridView1.Rows
-                      where row.Cells[1].FormattedValue.ToString() != string.Empty
-                      select Convert.ToInt32(row.Cells[4].FormattedValue)).Max().ToString();
-
-
-            // Max
+                        where row.Cells[1].FormattedValue.ToString() != string.Empty
+                        select Convert.ToInt32(row.Cells[4].FormattedValue)).Max().ToString();
             int max = 0;
             for (int i = 0; i <= dataGridView1.Rows.Count - 1; i++)
             {
@@ -109,7 +80,9 @@ namespace LAB3
             Max.Text = cmax.Max().ToString();
 
             //Min 
-            
+            Min.Text = (from DataGridViewRow row in dataGridView1.Rows
+                        where row.Cells[1].FormattedValue.ToString() != string.Empty
+                        select Convert.ToInt32(row.Cells[4].FormattedValue)).Min().ToString();
             int min = 0;
             for (int i = 0; i <= dataGridView1.Rows.Count - 1; i++)
             {
@@ -128,9 +101,8 @@ namespace LAB3
 
             Min.Text = cmin.Min().ToString();
 
-            //test
+            //Sum of study
             int nr = dataGridView1.Rows.Count;
-
             ST.Text = nr.ToString();
 
         
