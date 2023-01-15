@@ -13,13 +13,13 @@ namespace LAB3
         public string id;
         public int birth;
         public string height;
-        public int grade;
+        public double grade;
         public string major;
         public string st;
         public string demo;
         public int num;
 
-        public Student(string name,int birth, string id, string height, int grade, string major)
+        public Student(string name,int birth, string id, string height, double grade, string major)
         {
             
             this.name = name;
@@ -46,7 +46,7 @@ namespace LAB3
         {
             get { return this.height; }
         }
-        public int Grade
+        public double Grade
         {
             get { return this.grade; }
         }

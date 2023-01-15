@@ -39,7 +39,7 @@ namespace LAB3
             string major = Major.Text;
             
             int iYear = Int32.Parse(year);
-            int G = Int32.Parse(grade);
+            double G = Double.Parse(grade);
 
             Student newStudent = new Student(name,iYear,id,height,G,major);
             this.list.Add(newStudent);
@@ -60,44 +60,44 @@ namespace LAB3
             //Max
             Max.Text = (from DataGridViewRow row in dataGridView1.Rows
                         where row.Cells[1].FormattedValue.ToString() != string.Empty
-                        select Convert.ToInt32(row.Cells[4].FormattedValue)).Max().ToString();
-            int max = 0;
-            for (int i = 0; i <= dataGridView1.Rows.Count - 1; i++)
+                        select Convert.ToDouble(row.Cells[4].FormattedValue)).Max().ToString();
+            double max = 0;
+            for (int i = 1; i <= dataGridView1.Rows.Count - 1; i++)
             {
-                if (max < int.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString()))
+                if (max < double.Parse(dataGridView1.Rows[i].Cells[1].Value.ToString()))
                 {
-                    max = int.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString());
+                    max = double.Parse(dataGridView1.Rows[i].Cells[1].Value.ToString());
                 }
             }
 
             Max.Text = max.ToString();
 
-            int[] cmax = new int[dataGridView1.Rows.Count];
+            double[] cmax = new double[dataGridView1.Rows.Count];
             cmax = (from DataGridViewRow row in dataGridView1.Rows
                  where row.Cells[1].FormattedValue.ToString() != string.Empty
-                 select Convert.ToInt32(row.Cells[4].FormattedValue)).ToArray();
-
+                 select Convert.ToDouble(row.Cells[4].FormattedValue)).ToArray();
+            
             Max.Text = cmax.Max().ToString();
 
             //Min 
             Min.Text = (from DataGridViewRow row in dataGridView1.Rows
                         where row.Cells[1].FormattedValue.ToString() != string.Empty
-                        select Convert.ToInt32(row.Cells[4].FormattedValue)).Min().ToString();
-            int min = 0;
+                        select Convert.ToDouble(row.Cells[4].FormattedValue)).Min().ToString();
+            double min = 0;
             for (int i = 0; i <= dataGridView1.Rows.Count - 1; i++)
             {
-                if (min < int.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString()))
+                if (min < double.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString()))
                 {
-                    min = int.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString());
+                    min = double.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString());
                 }
             }
 
             Min.Text = min.ToString();
 
-            int[] cmin = new int[dataGridView1.Rows.Count];
+            double[] cmin = new double[dataGridView1.Rows.Count];
             cmin = (from DataGridViewRow row in dataGridView1.Rows
                   where row.Cells[1].FormattedValue.ToString() != string.Empty
-                  select Convert.ToInt32(row.Cells[4].FormattedValue)).ToArray();
+                  select Convert.ToDouble(row.Cells[4].FormattedValue)).ToArray();
 
             Min.Text = cmin.Min().ToString();
 
@@ -106,6 +106,11 @@ namespace LAB3
             ST.Text = nr.ToString();
 
         
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
